@@ -40,14 +40,14 @@
        }
 
        .card-responsive{
-          width: 250px;
+        
        }
     }
 
     @media screen and (min-width: 720px) {
-        .menu-custom-icon {
-          display: none;
-        }
+      .menu-custom-icon {
+        display: none;
+      }
 
       .side-nav-expandable{
         display: none;
@@ -62,7 +62,7 @@
        }
 
        .card-responsive{
-          width: 500px;
+         
       }
     }
 
@@ -82,6 +82,11 @@
       top: 0px;
       z-index: 1;
     }
+
+    .card-text-responsive{
+        min-width: 250px;
+        max-width: 500px;
+      }
 
     </style>
     
@@ -195,7 +200,7 @@
           <img src="./v1.jpg" alt="testing img" class="img-thumbnail card-responsive" >
         </div>
         
-        <div class="d-flex flex-column justify-content-center m-2" style="min-width: 350px; max-width: 500px;">
+        <div class="d-flex flex-column justify-content-center m-2 card-text-responsive">
           <h3>What is Lorem Ipsum?</h3> 
           <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -211,7 +216,7 @@
     <div class="d-flex m-2">
       <div class="d-sm-flex" style="flex: 1 auto;"></div>
       <div class="border d-flex flex-column-reverse flex-md-row align-items-center bg-light">
-        <div class="d-flex flex-column justify-content-center m-2" style="min-width: 350px; max-width: 500px;">
+        <div class="d-flex flex-column justify-content-center m-2 card-text-responsive">
           <h3>What is Lorem Ipsum?</h3> 
           <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -236,7 +241,7 @@
           <img src="./v3.jpg" alt="testing img" class="img-thumbnail card-responsive" >
         </div>
         
-        <div class="d-flex flex-column justify-content-center m-2" style="min-width: 350px; max-width: 500px;">
+        <div class="d-flex flex-column justify-content-center m-2 card-text-responsive">
           <h3>What is Lorem Ipsum?</h3> 
           <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
