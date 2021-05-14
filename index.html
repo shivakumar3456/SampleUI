@@ -319,7 +319,7 @@
         $("#menu-button-custom").click(function(){
        
           $(".side-nav-expandable").show(3000);
-          $(".side-nav-expandable").css("height",   window.innerHeight)
+          $(".side-nav-expandable").css("height",   window.outerHeight)
        
           $("body").addClass("body-stop-scroll");
         });
