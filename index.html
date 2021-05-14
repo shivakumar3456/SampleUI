@@ -15,7 +15,7 @@
 
     <style>
         
-      @media screen and (max-width: 720px){
+      @media screen and (max-width: 768px){
         .menu-custom-icon {
           display: inline;
         }
@@ -28,7 +28,7 @@
           position: absolute;
           z-index: 2;
           width: 100%;
-          height: 100%;
+          overflow-y: auto;
        }
 
        .carousel-img-responsive{
@@ -40,11 +40,11 @@
        }
 
        .card-responsive{
-        
+        width: 300px;
        }
     }
 
-    @media screen and (min-width: 720px) {
+    @media screen and (min-width: 768px) {
       .menu-custom-icon {
         display: none;
       }
@@ -62,7 +62,7 @@
        }
 
        .card-responsive{
-         
+        width: 500px;
       }
     }
 
@@ -88,57 +88,74 @@
         max-width: 500px;
       }
 
+    .body-stop-scroll{
+      overflow: hidden;
+    }
+
     </style>
     
   </head>
+  <!-- <body onresize="triggerMenuToggle()" onload="makeNavbarSticky()" style="background-color:rgba(179, 179, 179, 0.562)"> -->
   <body onresize="triggerMenuToggle()" style="background-color:rgba(179, 179, 179, 0.562)">
+  
+  <!-- large screen menu bar component -->
 
-    <!-- small screen menu bar component -->
-    <div class="side-nav-expandable">
-      <div class="d-flex flex-column bg-light h-100">
-        <button class="material-icons-outlined align-self-end btn btn-primary m-2" style="width: 100px;" id="side-nav-close">
-          close
-        </button>
-        <div class="btn btn-primary px-4 m-2">menu</div>
-        <div class="btn btn-primary px-4 m-2">menu</div>
-        <div class="btn btn-primary px-4 m-2">menu</div>
-        <div class="btn btn-primary px-4 m-2">menu</div>
-        <div class="btn btn-primary px-4 m-2">menu</div>
-        <div class="btn btn-primary px-4 m-2">menu</div>
+  <div id="mainpage m-2" >
+
+    <div class="row border d-flex custom-menubar bg-light m-2 custom-sticky">
+       <!-- small screen menu bar component -->
+      <div class="side-nav-expandable bg-light pb-3">
+        <div class="d-flex flex-column">
+          <button class="material-icons-outlined align-self-end btn btn-primary m-2" style="width: 100px;" id="side-nav-close">
+            close
+          </button>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+          <div class="btn btn-primary px-4 m-2">menu</div>
+        </div>
       </div>
-    </div>
 
-    <!-- large screen menu bar component -->
+      <div class="px-1">
+        <span class="font-weight-bold" style="font-size: 2rem;">Brand</span>
+      </div>
 
-  <div id="mainpage m-2">
+      <div style="flex: 1 auto;"></div>
 
-    <div class="row border d-flex custom-menubar bg-light m-2">
-          <div class="px-1">
-            <span class="font-weight-bold" style="font-size: 2rem;">Brand</span>
+      <div>
+        <div class="menu-custom-icon">
+          <div class="d-flex justify-content-end mr-2 my-2">
+            <button class="btn btn-primary  material-icons" id="menu-button-custom">
+              menu
+            </button>
           </div>
-
-          <div style="flex: 1 auto;"></div>
-
-          <div>
-            <div class="menu-custom-icon">
-              <div class="d-flex justify-content-end mr-2 my-2">
-                <button class="btn btn-primary  material-icons" id="menu-button-custom">
-                  menu
-                </button>
-              </div>
-            </div>
-          
-            <div id="side-nav-custom">
-              <div class="d-flex flex-row">
-                <div class="btn btn-primary px-4 m-2">menu</div>
-                <div class="btn btn-primary px-4 m-2">menu</div>
-                <div class="btn btn-primary px-4 m-2">menu</div>
-                <div class="btn btn-primary px-4 m-2">menu</div>
-                <div class="btn btn-primary px-4 m-2">menu</div>
-              </div>
-            </div>
-           
+        </div>
+      
+        <div id="side-nav-custom">
+          <div class="d-flex flex-row">
+            <div class="btn btn-primary px-4 m-2">menu</div>
+            <div class="btn btn-primary px-4 m-2">menu</div>
+            <div class="btn btn-primary px-4 m-2">menu</div>
+            <div class="btn btn-primary px-4 m-2">menu</div>
+            <div class="btn btn-primary px-4 m-2">menu</div>
           </div>
+        </div>
+        
+      </div>
     </div>
 
     <!-- carousel component -->
@@ -307,24 +324,23 @@
    <script>
       $(document).ready(function(){
 
-        window.onscroll = function() {makeNavbarSticky()};
-
-        window.onload = function() {
-          makeNavbarSticky()
-        };
+        // window.onscroll = function() {makeNavbarSticky()};
 
         $(".side-nav-expandable").hide();
 
         $("#menu-button-custom").click(function(){
        
           $(".side-nav-expandable").show(3000);
-
+          $(".side-nav-expandable").css("height",   window.innerHeight)
+       
+          $("body").addClass("body-stop-scroll");
         });
 
         $("#side-nav-close").click(function(){
 
           $(".side-nav-expandable").hide();
 
+          $("body").removeClass("body-stop-scroll");
         });
 
       });
