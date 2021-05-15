@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full View Webpage</title>
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0px;
+        }
+
+        .mainsize{
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        section{
+            position: relative;
+        }
+        
+        #home > div{
+            position: absolute;
+        }
+
+        #home div#custom-navbar{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #home div#custom-navbar ul{
+            
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #custom-navbar *{
+            color: #fff;
+            font-family: cursive;           
+        }
+
+        #custom-navbar ul li{
+            margin: 5px 10px;
+            padding: 5px 10px;
+            border-radius: 5%;
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
+
+        #custom-navbar ul li:hover{
+            background-color: #fff;
+            color: #000;
+        }
+
+        section#about *{
+            color: #fff; 
+            font-family: 'Courier New', Courier, monospace;           
+        }
+
+        section#about {
+            background-color: rgb(68, 44, 44);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        section#about *:first-child{
+            font-size: 2rem;
+        }
+
+        .text{
+            max-width: 90%;
+        }
+
+        section#about > .imagesize{
+            width: 300px;
+            mix-blend-mode: soft-light;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="home" class="mainsize">
+        <div>
+            <img id="mainimage" src="./images/Photography.jpeg" alt="Photography image" class="mainsize">
+        </div>
+
+        <div id="custom-navbar" class="p-3">
+            <h2 style="font-size: 2rem;"> Photography </h2>
+            <ul>
+                <li data-item="home" onclick="scrollToDiv(this)"> Home </li>
+                <li data-item="about" onclick="scrollToDiv(this)"> About </li>
+                <li data-item="services" onclick="scrollToDiv(this)"> Services </li>
+                <li data-item="projects" onclick="scrollToDiv(this)"> Projects </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="about" class="mainsize py-3">
+        <h3> About Photography</h3>
+        <div class="text">
+            Photography is the art, application, and practice of creating durable images by recording light, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film. It is employed in many fields of science, manufacturing (e.g., photolithography), and business, as well as its more direct uses for art, film and video production, recreational purposes, hobby, and mass communication.[1]
+
+            Typically, a lens is used to focus the light reflected or emitted from objects into a real image on the light-sensitive surface inside a camera during a timed exposure. With an electronic image sensor, this produces an electrical charge at each pixel, which is electronically processed and stored in a digital image file for subsequent display or processing. The result with photographic emulsion is an invisible latent image, which is later chemically "developed" into a visible image, either negative or positive depending on the purpose of the photographic material and the method of processing. A negative image on film is traditionally used to photographically create a positive image on a paper base, known as a print, either by using an enlarger or by contact printing.
+        </div>
+        <div class="imagesize">
+            <img src="./images/lens.jpg" alt="Photography image" style="width: 100%;">
+        </div>
+    </section>
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+    <script>
+
+        window.addEventListener("scroll", function(){
+            let value = window.scrollY;
+            document.getElementById("mainimage").style.bottom = value * -0.05 + 'px';
+            document.getElementById("mainimage").style.position = "fixed";
+            console.log(value * -0.5 + 'px');
+        });
+       
+    </script>
+</body>
+</html>
