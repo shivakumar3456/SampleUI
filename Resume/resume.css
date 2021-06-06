@@ -1,0 +1,275 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #a6e0e0;
+}
+
+.main_container{
+    padding: 60px;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    box-shadow: 5px 5px 10px #7e7e7e, -5px -5px 10px #7e7e7e;
+}
+
+.container .leftside{
+    background-color: #35357c;
+    width: 100%;
+    height: 100%;
+
+    padding: 50px;
+}
+
+.leftside .img_name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #c4c3c3;
+}
+
+.img_name .img{
+
+    position: relative;
+    background-color: #ffffff;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.img_name img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img_name h2{
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.img_name h2 span{
+    font-weight: 400;
+    font-size: 0.8em;
+}
+
+.contact_info{
+    padding-top: 10px;
+}
+
+.contact_info h2{
+    color: white;
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+.contact_info ul{
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+.contact_info ul li{
+    margin-bottom: 15px;
+}
+
+.contact{
+    margin-left: 10px;
+    color: white;
+}
+
+.icon{
+    color: #4cb3e3;
+}
+
+/* education */
+
+.contact_info.education .edu{
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+.contact_info.education .edu h4:first-of-type{
+    color: #4cb3e3;
+    margin: 5px;
+}
+
+.contact_info.education .edu h4:nth-of-type(2), h5{
+    color: white;
+    margin: 5px;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/*languages*/
+
+.contact_info.languages_info .language{
+    padding: 0 20px;
+}
+
+.language h4{
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 400;
+}
+
+.language .total{
+    width: 100%;
+    height: 5px;
+    background-color: #282626;
+}
+
+.language .percent{
+    background-color: #4cb3e3;
+}
+
+.container .rightside{
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+.about{
+    padding: 40px 40px 0 40px;
+}
+
+.about h2{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #35357c;
+}
+
+.about p{
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #565555;
+}
+
+.about.experience .custom_section{
+    display: flex;
+    flex-direction: column;
+}
+
+.custom_section .box{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.custom_section .box .year_company{
+    min-width: 150px;
+}
+
+.custom_section .box *{
+    color: #565555;
+    margin: 0;
+    padding: 5px;
+}
+.custom_section .box .year_company h4:first-of-type,
+.custom_section .box .role h4:first-of-type{
+    font-size: 1.1rem;
+    color: #4cb3e3;
+}
+
+/*.about .custom_section{*/
+/*    */
+/*}*/
+
+.about.p_skills .custom_section{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+.custom_section .total{
+    width: 100%;
+    height: 3px;
+    background-color: #282626;
+}
+
+.custom_section .percent{
+    background-color: #4cb3e3;
+}
+
+.skill h4{
+    margin: 10px;
+    color: #565555;
+    font-size: 1.1rem;
+}
+
+.skill .total{
+    margin: 10px;
+    width: 90%;
+    height: 8px;
+}
+
+.about.interest .c_interest{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
+
+.c_interest *{
+    color: #565555;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 1000px) {
+    .about.interest .c_interest{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .custom_section .box{
+        flex-direction: column;
+    }
+
+    .main_container{
+        padding: 40px;
+    }
+
+    .about.p_skills .custom_section{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .about.interest .c_interest{
+        grid-template-columns: 1fr;
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+    }
+
+    .main_container{
+        padding: 20px;
+    }
+
+    .custom_section .box{
+        flex-direction: column;
+    }
+
+    .about.p_skills .custom_section{
+        grid-template-columns: 1fr;
+    }
+}
+
+
